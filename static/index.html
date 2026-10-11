@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settle - get paid on time, see the cash gap before it hits</title>
+<link rel="stylesheet" href="/static/vendor/ag-grid.css">
+<link rel="stylesheet" href="/static/vendor/ag-theme-quartz.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Settle<span>invoice follow-up that asks before it acts</span></div>
+  <div class="modes" id="modes"></div>
+  <div class="tools">
+    <button class="ghost" id="btnSeed">Create demo data</button>
+    <button class="ghost" id="btnSync">Check PayPal for payments</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1 id="headline">Loading your cash picture...</h1>
+      <p id="subline"></p>
+      <div class="strip" id="strip"></div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="runway" aria-label="Cash balance forecast for the next 60 days"></canvas>
+      <div class="legend"><span class="l-best">pay early</span><span class="l-exp">pay as usual</span><span class="l-worst">pay late</span></div>
+    </div>
+  </section>
+
+  <section class="queue" id="queueSection">
+    <h2>Waiting for your OK <small id="queueCount"></small></h2>
+    <p class="hint">Nothing is sent to a client or changed in PayPal until you approve it here.</p>
+    <div id="queue"></div>
+  </section>
+
+  <section class="invoices">
+    <h2>Open invoices</h2>
+    <div id="grid" class="ag-theme-quartz"></div>
+  </section>
+
+  <section class="log">
+    <h2>What the agents did</h2>
+    <div id="audit"></div>
+  </section>
+</main>
+<div id="toast" role="status"></div>
+
+<script src="/static/vendor/chart.umd.js"></script>
+<script src="/static/vendor/ag-grid-community.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

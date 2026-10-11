@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+data/*.db
+data/mock_paypal.json
+data/clients.json
+.pytest_cache/
+
+GUIDE.md
+docs/DEMO_SCRIPT.md
+docs/DEVPOST_TEXT.md
